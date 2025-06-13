@@ -18,7 +18,11 @@ import {
   PawPrint,
   TestTube,
   Star,
-  ChevronDown
+  ChevronDown,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube
 } from "lucide-react";
 
 const Index = () => {
@@ -138,7 +142,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="border-b bg-white px-4 py-4">
-        <div className="container mx-auto flex items-center justify-between">
+        <div className="container mx-auto flex items-center justify-between max-w-7xl">
           <div className="flex items-center space-x-3">
             <div className="h-12 w-12 flex items-center justify-center">
               <svg width="48" height="48" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -152,31 +156,34 @@ const Index = () => {
                 <path d="M34.376 50.1329L35.0508 48.813C35.4858 49.143 36.1307 49.4355 36.8807 49.4355C37.1432 49.4355 37.3006 49.3754 37.3006 49.2405C37.3006 49.0379 37.0006 49.023 36.6106 48.9556C35.8008 48.8205 34.6233 48.6105 34.6233 47.3657C34.6233 46.2334 35.5759 45.7009 36.9031 45.7009C38.0355 45.7009 38.7105 46.0607 39.003 46.2558L38.3205 47.5382C37.983 47.3282 37.3607 47.0958 36.7682 47.0958C36.4982 47.0958 36.3707 47.1558 36.3707 47.2758C36.3707 47.4406 36.5733 47.4557 36.8807 47.5157C37.6606 47.6657 39.0704 47.8231 39.0704 49.1355C39.0704 50.2078 38.2455 50.8828 36.7232 50.8828C35.7932 50.8828 34.9233 50.5604 34.376 50.1329Z" fill="white"/>
               </svg>
             </div>
+            <div className="hidden md:block">
+              <div className="text-lg font-bold text-blue-600">STEM FOR SOCIETY</div>
+            </div>
           </div>
           
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             <div className="relative group">
-              <button className="text-gray-500 hover:text-blue-600 flex items-center text-sm">
+              <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
                 Courses/Trainings <ChevronDown className="h-4 w-4 ml-1" />
               </button>
             </div>
             <div className="relative group">
-              <button className="text-gray-500 hover:text-blue-600 flex items-center text-sm">
+              <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
                 Services <ChevronDown className="h-4 w-4 ml-1" />
               </button>
             </div>
             <div className="relative group">
-              <button className="text-gray-500 hover:text-blue-600 flex items-center text-sm">
+              <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
                 Resources <ChevronDown className="h-4 w-4 ml-1" />
               </button>
             </div>
           </nav>
           
-          <div className="flex space-x-3">
-            <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50 rounded-full px-6">
+          <div className="flex items-center space-x-3">
+            <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50 rounded-full px-6 text-sm">
               Partner with us
             </Button>
-            <Button className="bg-blue-500 hover:bg-blue-600 rounded-full px-8">
+            <Button className="bg-blue-500 hover:bg-blue-600 rounded-full px-8 text-sm">
               LOGIN
             </Button>
           </div>
@@ -185,28 +192,50 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="py-20 bg-white relative overflow-hidden">
-        {/* Decorative connection lines and dots */}
-        <div className="absolute top-20 left-16 hidden lg:block">
-          <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-          <div className="w-px h-32 bg-blue-500 ml-1.5 mt-2"></div>
+        {/* Animated Grid Background */}
+        <div 
+          className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px',
+            mask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+            WebkitMask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+          }}
+        />
+
+        {/* Animated connection lines and dots */}
+        <div className="absolute top-20 left-16 hidden lg:block animate-pulse">
+          <div className="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
+          <div className="w-px h-32 bg-gradient-to-b from-blue-500 to-transparent ml-1.5 mt-2 animate-pulse"></div>
         </div>
         
-        <div className="absolute top-40 left-72 hidden lg:block">
+        <div className="absolute top-40 left-72 hidden lg:block animate-bounce delay-300">
           <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-          <div className="w-px h-20 bg-blue-500 ml-1 mt-2"></div>
+          <div className="w-px h-20 bg-gradient-to-b from-blue-500 to-transparent ml-1 mt-2"></div>
         </div>
         
-        <div className="absolute top-32 right-20 hidden lg:block">
-          <div className="w-px h-40 bg-blue-500"></div>
-          <div className="w-3 h-3 bg-blue-500 rounded-full -ml-1.5"></div>
+        <div className="absolute top-32 right-20 hidden lg:block animate-pulse delay-500">
+          <div className="w-px h-40 bg-gradient-to-b from-transparent to-blue-500"></div>
+          <div className="w-3 h-3 bg-blue-500 rounded-full -ml-1.5 animate-ping"></div>
         </div>
         
-        <div className="absolute bottom-32 right-32 hidden lg:block">
-          <div className="w-px h-24 bg-blue-500"></div>
+        <div className="absolute bottom-32 right-32 hidden lg:block animate-bounce delay-700">
+          <div className="w-px h-24 bg-gradient-to-b from-transparent to-blue-500"></div>
           <div className="w-2 h-2 bg-blue-500 rounded-full -ml-0.5"></div>
         </div>
+
+        {/* Connecting animated lines */}
+        <div className="absolute top-20 left-20 hidden lg:block">
+          <div className="w-52 h-px bg-gradient-to-r from-blue-500 to-transparent animate-pulse delay-200"></div>
+        </div>
+        <div className="absolute top-44 right-24 hidden lg:block">
+          <div className="w-40 h-px bg-gradient-to-l from-blue-500 to-transparent animate-pulse delay-600"></div>
+        </div>
         
-        <div className="container mx-auto text-center px-4 relative">
+        <div className="container mx-auto text-center px-4 relative max-w-7xl">
           <p className="text-gray-600 mb-8 text-lg">Empowering Future Innovators through STEM Learning</p>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight max-w-5xl mx-auto">
@@ -265,7 +294,7 @@ const Index = () => {
 
       {/* Sectors Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-16 text-gray-500 text-center md:text-left">Sectors we Focus</h2>
           <div className="max-w-6xl mx-auto">
             {/* Row 1 - 3 items */}
@@ -361,7 +390,7 @@ const Index = () => {
 
       {/* Why Choose Section */}
       <section className="py-20 bg-white border-4 border-blue-500 mx-4 my-8 rounded-none">
-        <div className="container mx-auto px-8">
+        <div className="container mx-auto px-8 max-w-7xl">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-gray-600 mb-4 bg-gray-100 inline-block px-4 py-2 rounded-full">World-Class Instructors</p>
@@ -382,7 +411,7 @@ const Index = () => {
 
       {/* Partners Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center max-w-7xl">
           <h2 className="text-2xl font-bold mb-8">Industrial & Academic Partners</h2>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {partners.map((partner, index) => (
@@ -396,7 +425,7 @@ const Index = () => {
 
       {/* Program Structure */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <h2 className="text-3xl font-bold text-center mb-12">Program Structure</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {programStructure.map((program, index) => (
@@ -428,7 +457,7 @@ const Index = () => {
 
       {/* Testimonials */}
       <section className="py-16 bg-blue-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <h2 className="text-3xl font-bold text-center mb-12">Testimonials</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
@@ -451,7 +480,7 @@ const Index = () => {
 
       {/* FAQ Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
@@ -475,56 +504,111 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center">
-                  <TestTube className="h-4 w-4 text-blue-900" />
+      {/* New Footer matching the image */}
+      <footer className="bg-blue-600 text-white py-16">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+            {/* Logo and Description */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="h-12 w-12 rounded-lg bg-white/10 flex items-center justify-center">
+                  <svg width="32" height="32" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.4619 41.3662L25.6298 39.0822C26.3827 39.6531 27.4987 40.1592 28.7964 40.1592C29.2507 40.1592 29.5232 40.0555 29.5232 39.8219C29.5232 39.4714 29.0041 39.4455 28.3293 39.3287C26.9277 39.0951 24.8901 38.7317 24.8901 36.5774C24.8901 34.6177 26.5382 33.6963 28.8354 33.6963C30.795 33.6963 31.9631 34.3192 32.4692 34.6567L31.2883 36.876C30.7042 36.5124 29.6271 36.1102 28.6018 36.1102C28.1346 36.1102 27.9139 36.214 27.9139 36.4217C27.9139 36.7072 28.2645 36.7331 28.7964 36.837C30.1461 37.0965 32.586 37.369 32.586 39.6401C32.586 41.496 31.1584 42.6641 28.5239 42.6641C26.9146 42.6641 25.4093 42.1059 24.4619 41.3662Z" fill="white"/>
+                    <path d="M35.4016 36.364H33.0137V33.8332H40.7875V36.364H38.3995V42.5156H35.4016V36.364Z" fill="white"/>
+                    <path d="M44.5121 40.0238H48.3666V42.5156H41.6309V33.8332H48.2238V36.3251H44.5121V37.0388H48.12V39.297H44.5121V40.0238Z" fill="white"/>
+                    <path d="M57.0746 33.8332H59.9426V42.5156H57.0746V38.8169L55.7119 40.9841H53.778L52.4024 38.8038V42.5156H49.5342V33.8332H52.4153L54.7255 37.7656L57.0746 33.8332Z" fill="white"/>
+                  </svg>
                 </div>
-                <span className="font-bold text-xl">STEM FOR SOCIETY</span>
+                <div>
+                  <div className="text-xl font-bold">STEM FOR SOCIETY</div>
+                </div>
               </div>
-              <p className="text-sm text-blue-200">
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+              <p className="text-blue-100 mb-6 leading-relaxed">
+                Let's Innovate, Incubate and Impact the world together!
               </p>
+              <div className="space-y-2 text-blue-100">
+                <p>217 Broadway, Floor 9, New York, NY 10007</p>
+                <p>844-402-4344</p>
+                <p>support@tomorrowhealth.com</p>
+              </div>
             </div>
-            
+
+            {/* Programs */}
             <div>
-              <h4 className="font-semibold mb-4">COMPANY</h4>
-              <ul className="space-y-2 text-sm text-blue-200">
-                <li><a href="#" className="hover:text-white">About Us</a></li>
-                <li><a href="#" className="hover:text-white">Our Services</a></li>
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white">Affiliate Program</a></li>
+              <h4 className="font-semibold mb-4 text-blue-100">PROGRAMS</h4>
+              <ul className="space-y-3 text-white">
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Explore Courses</a></li>
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Psychology counselling</a></li>
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Career counselling</a></li>
               </ul>
             </div>
 
+            {/* For Institutions */}
             <div>
-              <h4 className="font-semibold mb-4">GET HELP</h4>
-              <ul className="space-y-2 text-sm text-blue-200">
-                <li><a href="#" className="hover:text-white">FAQ</a></li>
-                <li><a href="#" className="hover:text-white">Shipping</a></li>
-                <li><a href="#" className="hover:text-white">Returns</a></li>
-                <li><a href="#" className="hover:text-white">Order Status</a></li>
+              <h4 className="font-semibold mb-4 text-blue-100">FOR INSTITUTIONS</h4>
+              <ul className="space-y-3 text-white">
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Plans and pricings</a></li>
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Campus Ambassador Program</a></li>
               </ul>
             </div>
 
+            {/* Community & Quick Links */}
             <div>
-              <h4 className="font-semibold mb-4">FOLLOW US</h4>
-              <p className="text-sm text-blue-200 mb-4">
-                Get all of our latest news and product updates delivered to your inbox!
-              </p>
-              <div className="flex space-x-2">
-                <Button size="sm" variant="secondary">Subscribe</Button>
+              <h4 className="font-semibold mb-4 text-blue-100">COMMUNITY</h4>
+              <ul className="space-y-3 text-white mb-6">
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Join Community</a></li>
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Scientific Communication Blog</a></li>
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Our Youtube Channel</a></li>
+              </ul>
+              
+              <h4 className="font-semibold mb-4 text-blue-100">QUICK LINKS</h4>
+              <ul className="space-y-3 text-white">
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Register</a></li>
+                <li><a href="#" className="hover:text-blue-200 transition-colors">Login</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Newsletter Subscription */}
+          <div className="border-t border-blue-500 pt-8 mb-8">
+            <div className="max-w-md">
+              <h4 className="font-semibold mb-4 text-blue-100">SUBSCRIBE FOR THE LATEST UPDATES</h4>
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="First name"
+                  className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                />
+                <Button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium">
+                  Subscribe
+                </Button>
               </div>
             </div>
           </div>
-          
-          <div className="border-t border-blue-800 mt-8 pt-8 text-center">
-            <p className="text-sm text-blue-200">
-              © 2024 STEM FOR SOCIETY. All rights reserved.
+
+          {/* Social Media and Copyright */}
+          <div className="flex flex-col md:flex-row justify-between items-center border-t border-blue-500 pt-8">
+            <div className="flex space-x-4 mb-4 md:mb-0">
+              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Twitter className="h-5 w-5 text-blue-600" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Instagram className="h-5 w-5 text-blue-600" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Linkedin className="h-5 w-5 text-blue-600" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Youtube className="h-5 w-5 text-blue-600" />
+              </a>
+            </div>
+            <p className="text-blue-200 text-sm">
+              © 2025 STEM for society. All rights reserved.
             </p>
           </div>
         </div>
