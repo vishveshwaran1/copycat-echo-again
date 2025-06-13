@@ -127,14 +127,30 @@ const Index = () => {
     { question: "Where", answer: "We offer both online and on-campus programs depending on the course." }
   ];
 
+  // Four-corner star SVG component
+  const FourCornerStar = () => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+      <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+    </svg>
+  );
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="border-b bg-white px-4 py-4">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="h-12 w-12 rounded-full border-2 border-dashed border-blue-400 flex items-center justify-center bg-blue-50">
-              <div className="text-blue-600 font-bold text-sm">STEM</div>
+            <div className="h-12 w-12 flex items-center justify-center">
+              <svg width="48" height="48" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.4619 41.3662L25.6298 39.0822C26.3827 39.6531 27.4987 40.1592 28.7964 40.1592C29.2507 40.1592 29.5232 40.0555 29.5232 39.8219C29.5232 39.4714 29.0041 39.4455 28.3293 39.3287C26.9277 39.0951 24.8901 38.7317 24.8901 36.5774C24.8901 34.6177 26.5382 33.6963 28.8354 33.6963C30.795 33.6963 31.9631 34.3192 32.4692 34.6567L31.2883 36.876C30.7042 36.5124 29.6271 36.1102 28.6018 36.1102C28.1346 36.1102 27.9139 36.214 27.9139 36.4217C27.9139 36.7072 28.2645 36.7331 28.7964 36.837C30.1461 37.0965 32.586 37.369 32.586 39.6401C32.586 41.496 31.1584 42.6641 28.5239 42.6641C26.9146 42.6641 25.4093 42.1059 24.4619 41.3662Z" fill="#0389FF"/>
+                <path d="M35.4016 36.364H33.0137V33.8332H40.7875V36.364H38.3995V42.5156H35.4016V36.364Z" fill="#0389FF"/>
+                <path d="M44.5121 40.0238H48.3666V42.5156H41.6309V33.8332H48.2238V36.3251H44.5121V37.0388H48.12V39.297H44.5121V40.0238Z" fill="#0389FF"/>
+                <path d="M57.0746 33.8332H59.9426V42.5156H57.0746V38.8169L55.7119 40.9841H53.778L52.4024 38.8038V42.5156H49.5342V33.8332H52.4153L54.7255 37.7656L57.0746 33.8332Z" fill="#0389FF"/>
+                <path d="M21.6123 47.2802H19.6474V47.7299H21.4172V49.1698H19.6474V50.8047H17.9375V45.7877H21.6123V47.2802Z" fill="white"/>
+                <path d="M25.6912 48.2959C25.6912 47.7183 25.2488 47.2761 24.6789 47.2761C24.1014 47.2761 23.6739 47.7183 23.6739 48.2959C23.6739 48.8658 24.1014 49.3158 24.6789 49.3158C25.2488 49.3158 25.6912 48.8658 25.6912 48.2959ZM22.0166 48.2959C22.0166 46.7885 23.134 45.6936 24.6789 45.6936C26.2236 45.6936 27.3561 46.796 27.3561 48.2959C27.3561 49.7883 26.2236 50.8906 24.6789 50.8906C23.134 50.8906 22.0166 49.7958 22.0166 48.2959Z" fill="white"/>
+                <path d="M29.6285 47.2501V48.1499H30.266C30.5135 48.1499 30.6934 47.955 30.6934 47.7C30.6934 47.4376 30.506 47.2501 30.2584 47.2501H29.6285ZM30.5209 50.8047L29.8984 49.5223H29.6285V50.8047H27.9111V45.7877H30.6259C31.6608 45.7877 32.4257 46.5602 32.4257 47.61C32.4257 48.285 32.1332 48.8475 31.6608 49.1624L32.5607 50.8047H30.5209Z" fill="white"/>
+                <path d="M34.376 50.1329L35.0508 48.813C35.4858 49.143 36.1307 49.4355 36.8807 49.4355C37.1432 49.4355 37.3006 49.3754 37.3006 49.2405C37.3006 49.0379 37.0006 49.023 36.6106 48.9556C35.8008 48.8205 34.6233 48.6105 34.6233 47.3657C34.6233 46.2334 35.5759 45.7009 36.9031 45.7009C38.0355 45.7009 38.7105 46.0607 39.003 46.2558L38.3205 47.5382C37.983 47.3282 37.3607 47.0958 36.7682 47.0958C36.4982 47.0958 36.3707 47.1558 36.3707 47.2758C36.3707 47.4406 36.5733 47.4557 36.8807 47.5157C37.6606 47.6657 39.0704 47.8231 39.0704 49.1355C39.0704 50.2078 38.2455 50.8828 36.7232 50.8828C35.7932 50.8828 34.9233 50.5604 34.376 50.1329Z" fill="white"/>
+              </svg>
             </div>
           </div>
           
@@ -170,22 +186,22 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Decorative connection lines and dots */}
-        <div className="absolute top-20 left-16">
+        <div className="absolute top-20 left-16 hidden lg:block">
           <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
           <div className="w-px h-32 bg-blue-500 ml-1.5 mt-2"></div>
         </div>
         
-        <div className="absolute top-40 left-72">
+        <div className="absolute top-40 left-72 hidden lg:block">
           <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
           <div className="w-px h-20 bg-blue-500 ml-1 mt-2"></div>
         </div>
         
-        <div className="absolute top-32 right-20">
+        <div className="absolute top-32 right-20 hidden lg:block">
           <div className="w-px h-40 bg-blue-500"></div>
           <div className="w-3 h-3 bg-blue-500 rounded-full -ml-1.5"></div>
         </div>
         
-        <div className="absolute bottom-32 right-32">
+        <div className="absolute bottom-32 right-32 hidden lg:block">
           <div className="w-px h-24 bg-blue-500"></div>
           <div className="w-2 h-2 bg-blue-500 rounded-full -ml-0.5"></div>
         </div>
@@ -193,7 +209,7 @@ const Index = () => {
         <div className="container mx-auto text-center px-4 relative">
           <p className="text-gray-600 mb-8 text-lg">Empowering Future Innovators through STEM Learning</p>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight max-w-5xl mx-auto">
             Let's <span className="text-black">Innovate, Incubate and Impact</span> <span className="text-gray-400">the<br />world together!</span>
           </h1>
           
@@ -250,110 +266,94 @@ const Index = () => {
       {/* Sectors Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-16 text-gray-500">Sectors we Focus</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* First row - 3 items */}
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-gray-500 text-center md:text-left">Sectors we Focus</h2>
+          <div className="max-w-6xl mx-auto">
+            {/* Row 1 - 3 items */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Climate Change</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Climate Change</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Technology</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Technology</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Life science</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Life science</span>
             </div>
             
-            {/* Second row - 4 items */}
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+            {/* Row 2 - 4 items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Innovation</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Innovation</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Finance</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Finance</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Pharmacy</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Pharmacy</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Agriculture</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Agriculture</span>
             </div>
             
-            {/* Third row - 3 items */}
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+            {/* Row 3 - 3 items */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Entrepreneurship</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Entrepreneurship</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Veterinary</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Veterinary</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Medicine</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Medicine</span>
             </div>
             
-            {/* Fourth row - 2 items centered */}
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+            {/* Row 4 - 2 items centered */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Allied health science</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Allied health science</span>
-            </div>
-            <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-              <div className="w-6 h-6 text-blue-800">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-                </svg>
+              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
+                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+                  <FourCornerStar />
+                </div>
+                <span className="text-gray-800 font-medium text-lg">Environmental Science</span>
               </div>
-              <span className="text-gray-800 font-medium text-lg">Environmental Science</span>
             </div>
           </div>
         </div>
