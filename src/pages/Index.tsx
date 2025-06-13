@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,15 +23,40 @@ import {
 
 const Index = () => {
   const stats = [
-    { title: "Active Incubation", subtitle: "Collaboration", value: "Join", description: "Join a vibrant community that fosters innovation and collaboration across all disciplines." },
-    { title: "Faculty", subtitle: "From all Individuals", value: "2200+", description: "Expert mentors from diverse backgrounds ready to guide your journey." },
-    { title: "Online", subtitle: "Self-Paced Courses", value: "Learn", description: "Access comprehensive learning materials at your own pace." }
+    { 
+      title: "Industry & Institution Collaboration",
+      subtitle: "Collaboration", 
+      description: "Building stronger academic-industry ties to shape future-ready learners.",
+      stats: [
+        { label: "Institution Partners", value: "40+" },
+        { label: "Industry Partners", value: "70+" },
+        { label: "Learning partners", value: "Trusted" }
+      ]
+    },
+    { 
+      title: "Trained Individuals",
+      subtitle: "Growth", 
+      description: "Much more students on our platform from the world",
+      stats: [
+        { label: "Trained Students", value: "22,000+" }
+      ],
+      hasAvatars: true
+    },
+    { 
+      title: "Discover Our Courses",
+      subtitle: "Course", 
+      description: "Gain in-depth knowledge from expert mentors with our carefully curated courses.",
+      stats: [
+        { label: "World class Courses", value: "100+" },
+        { label: "Success Rate", value: "90%" }
+      ]
+    }
   ];
 
   const sectors = [
     { name: "Climate Change", icon: Leaf },
     { name: "Technology", icon: Cpu },
-    { name: "Life Science", icon: TestTube },
+    { name: "Life science", icon: TestTube },
     { name: "Innovation", icon: Lightbulb },
     { name: "Finance", icon: DollarSign },
     { name: "Pharmacy", icon: Pill },
@@ -40,7 +64,7 @@ const Index = () => {
     { name: "Entrepreneurship", icon: Globe },
     { name: "Veterinary", icon: PawPrint },
     { name: "Medicine", icon: Stethoscope },
-    { name: "Allied Health Service", icon: Heart },
+    { name: "Allied health science", icon: Heart },
     { name: "Environmental Science", icon: Leaf }
   ];
 
@@ -84,7 +108,7 @@ const Index = () => {
     },
     {
       title: "Bootcamp",
-      subtitle: "Corporate / Startup Impact",
+      subtitle: "Corporate / Startup Impact",  
       duration: "3 Months", 
       features: ["Live Projects", "Industry / Other", "Certificate"]
     },
@@ -109,50 +133,102 @@ const Index = () => {
       <header className="border-b bg-white px-4 py-3">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
-              <TestTube className="h-4 w-4 text-white" />
+            <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center">
+              <TestTube className="h-5 w-5 text-white" />
             </div>
-            <span className="font-bold text-xl">STEM</span>
+            <span className="font-bold text-xl text-gray-700">STEM</span>
           </div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#" className="text-gray-600 hover:text-blue-600">Challenges</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">Services</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">Open Jobs</a>
+          
+          <nav className="hidden md:flex space-x-8">
+            <div className="relative group">
+              <button className="text-gray-600 hover:text-blue-600 flex items-center">
+                Courses/Trainings <ChevronDown className="h-4 w-4 ml-1" />
+              </button>
+            </div>
+            <div className="relative group">
+              <button className="text-gray-600 hover:text-blue-600 flex items-center">
+                Services <ChevronDown className="h-4 w-4 ml-1" />
+              </button>
+            </div>
+            <div className="relative group">
+              <button className="text-gray-600 hover:text-blue-600 flex items-center">
+                Resources <ChevronDown className="h-4 w-4 ml-1" />
+              </button>
+            </div>
           </nav>
-          <div className="flex space-x-2">
-            <Button variant="outline">Partner with Us</Button>
-            <Button>Join</Button>
+          
+          <div className="flex space-x-3">
+            <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50">
+              Partner with us
+            </Button>
+            <Button className="bg-blue-500 hover:bg-blue-600">
+              LOGIN
+            </Button>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto text-center px-4">
-          <p className="text-blue-600 mb-4">Empowering Leaders Innovate through technology</p>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Let's <span className="text-blue-600">Innovate, Incubate and Impact</span> the<br />
-            world together!
+      <section className="py-16 bg-gradient-to-b from-blue-50/30 to-white relative overflow-hidden">
+        {/* Decorative dots */}
+        <div className="absolute top-20 left-10 w-2 h-2 bg-blue-500 rounded-full"></div>
+        <div className="absolute top-32 left-4 w-3 h-3 bg-blue-400 rounded-full"></div>
+        <div className="absolute top-40 right-20 w-2 h-2 bg-blue-600 rounded-full"></div>
+        <div className="absolute bottom-20 right-10 w-3 h-3 bg-blue-400 rounded-full"></div>
+        
+        <div className="container mx-auto text-center px-4 relative">
+          <p className="text-gray-600 mb-6 text-lg">Empowering Future Innovators through STEM Learning</p>
+          
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Let's <span className="text-blue-600">Innovate, Incubate and Impact</span> <span className="text-gray-600">the<br />world together!</span>
           </h1>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join us in early start through best open professional challenges
+          
+          <p className="text-gray-600 mb-8 text-lg max-w-xl mx-auto">
+            Join hands with us to solve <span className="text-orange-500 font-semibold">Real-world challenges</span>
           </p>
-          <Button size="lg" className="mb-12">
+          
+          <Button size="lg" className="mb-16 bg-blue-500 hover:bg-blue-600 px-8 py-3 text-lg">
             EXPLORE OUR PROGRAMS
           </Button>
 
           {/* Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <Card key={index} className="p-6">
-                <CardContent className="p-0">
-                  <h3 className="font-semibold mb-1">{stat.title}</h3>
-                  <p className="text-sm text-blue-600 mb-2">{stat.subtitle}</p>
-                  <div className="text-2xl font-bold text-blue-600 mb-2">{stat.value}</div>
-                  <p className="text-sm text-gray-600">{stat.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {stats.map((stat, index) => {
+              const isMiddleCard = index === 1;
+              return (
+                <Card key={index} className={`p-6 ${isMiddleCard ? 'bg-blue-100 border-blue-200' : 'bg-white'}`}>
+                  <CardContent className="p-0">
+                    <div className="flex items-center mb-4">
+                      <Badge variant="secondary" className="mr-3 bg-gray-100 text-gray-700">
+                        {stat.subtitle}
+                      </Badge>
+                    </div>
+                    
+                    <h3 className="font-bold text-lg mb-3 text-left">{stat.title}</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left">{stat.description}</p>
+                    
+                    {stat.hasAvatars && (
+                      <div className="flex items-center mb-4">
+                        <div className="flex -space-x-2">
+                          <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white"></div>
+                          <div className="w-8 h-8 rounded-full bg-green-500 border-2 border-white"></div>
+                          <div className="w-8 h-8 rounded-full bg-purple-500 border-2 border-white"></div>
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="grid grid-cols-2 gap-4 text-left">
+                      {stat.stats.map((item, idx) => (
+                        <div key={idx}>
+                          <div className="text-2xl font-bold text-gray-800">{item.value}</div>
+                          <div className="text-xs text-gray-600">{item.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -160,15 +236,15 @@ const Index = () => {
       {/* Sectors Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Sectors we Focus</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Sectors we Focus</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {sectors.map((sector, index) => (
-              <Card key={index} className="p-4 hover:shadow-md transition-shadow cursor-pointer">
-                <CardContent className="p-0 text-center">
-                  <sector.icon className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-                  <p className="text-sm font-medium">{sector.name}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="bg-blue-100 rounded-lg p-4 flex items-center space-x-3 hover:bg-blue-200 transition-colors cursor-pointer">
+                <div className="bg-blue-500 rounded-full p-2 flex-shrink-0">
+                  <sector.icon className="h-5 w-5 text-white" />
+                </div>
+                <span className="text-gray-800 font-medium">{sector.name}</span>
+              </div>
             ))}
           </div>
         </div>
