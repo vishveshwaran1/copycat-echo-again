@@ -36,35 +36,41 @@ const ProgramStructure = () => {
     }
   ];
 
-  // 45-degree down arrow component
-  const DownArrow = () => (
-    <svg 
-      width="16" 
-      height="16" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      className="absolute top-3 right-3"
-      style={{ color: '#00549F' }}
-    >
-      <path 
-        d="M7 10L12 15L17 10" 
-        stroke="currentColor" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-        transform="rotate(45 12 12)"
+  // Arrow with circular tail component
+  const ArrowWithTail = () => (
+    <div className="absolute top-3 right-3 flex items-center">
+      <div 
+        className="w-4 h-4 rounded-full opacity-20"
+        style={{ backgroundColor: '#00549F' }}
       />
-    </svg>
+      <svg 
+        width="20" 
+        height="20" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        className="ml-1"
+        style={{ color: '#00549F' }}
+      >
+        <path 
+          d="M7 10L12 15L17 10" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+          transform="rotate(45 12 12)"
+        />
+      </svg>
+    </div>
   );
 
   return (
     <section className="py-8">
       <div className="container mx-auto px-4 max-w-7xl">
         <h2 className="text-2xl font-bold text-center mb-6">Program Structure</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {programStructure.map((program, index) => (
             <Card key={index} className="p-4 bg-white border border-gray-200 rounded-lg relative">
-              <DownArrow />
+              <ArrowWithTail />
               <CardContent className="p-0">
                 <div className="flex items-center mb-3">
                   <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">

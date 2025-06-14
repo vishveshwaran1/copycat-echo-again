@@ -2,8 +2,11 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const FAQSection = () => {
+  const [isToggled, setIsToggled] = useState(false);
+  
   const faqs = [
     { question: "What", answer: "Our programs cover a wide range of STEM fields including biotechnology, engineering, medicine, and more." },
     { question: "How", answer: "You can apply through our online portal. Applications are reviewed by our expert panel." },
@@ -17,7 +20,15 @@ const FAQSection = () => {
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => setIsToggled(!isToggled)}
+              style={{ 
+                backgroundColor: isToggled ? '#C0E1FF' : 'white',
+                borderColor: isToggled ? '#C0E1FF' : '#e5e7eb'
+              }}
+            >
               General Information <ChevronDown className="h-4 w-4 ml-2" />
             </Button>
           </div>

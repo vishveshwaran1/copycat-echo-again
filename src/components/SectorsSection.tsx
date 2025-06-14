@@ -1,10 +1,16 @@
 
 const SectorsSection = () => {
-  // Four-corner star SVG component (Gemini AI logo style)
+  // Updated star component with the specified design
   const FourCornerStar = () => (
-    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-      <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-    </svg>
+    <div 
+      className="w-10 h-10 flex-shrink-0"
+      style={{
+        width: '40px',
+        height: '40px',
+        background: '#00549F',
+        borderRadius: '1px'
+      }}
+    />
   );
 
   return (
@@ -15,21 +21,15 @@ const SectorsSection = () => {
           {/* Row 1 - 3 items */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Climate Change</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Technology</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Life science</span>
             </div>
           </div>
@@ -37,27 +37,19 @@ const SectorsSection = () => {
           {/* Row 2 - 4 items */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Innovation</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Finance</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Pharmacy</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Agriculture</span>
             </div>
           </div>
@@ -65,21 +57,15 @@ const SectorsSection = () => {
           {/* Row 3 - 3 items */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Entrepreneurship</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Veterinary</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Medicine</span>
             </div>
           </div>
@@ -87,15 +73,11 @@ const SectorsSection = () => {
           {/* Row 4 - 2 items centered */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Allied health science</span>
             </div>
             <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
-              <div className="w-5 h-5 text-blue-800 flex-shrink-0">
-                <FourCornerStar />
-              </div>
+              <FourCornerStar />
               <span className="text-gray-800 font-medium text-base">Environmental Science</span>
             </div>
           </div>
