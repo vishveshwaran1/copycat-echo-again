@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,7 +23,10 @@ import {
   Twitter,
   Instagram,
   Linkedin,
-  Youtube
+  Youtube,
+  Calendar,
+  Monitor,
+  Clock
 } from "lucide-react";
 
 const Index = () => {
@@ -99,28 +103,32 @@ const Index = () => {
 
   const programStructure = [
     {
-      title: "Foundation",
-      subtitle: "Bootcamp / Intensive / Mentorship",
-      duration: "4 Months",
-      features: ["Skill Development", "Industry-led Online", "Hands-On"]
+      title: "General",
+      subtitle: "Seminar / Webinar / Mentorship",
+      duration: "Frequently",
+      features: ["Both Online + Offline"],
+      icon: <BookOpen className="h-5 w-5 text-blue-600" />
     },
     {
-      title: "Practice", 
+      title: "Basic", 
       subtitle: "Certificate Program",
-      duration: "6 Months",
-      features: ["Real-time", "Group CSOL Learning", "General"]
+      duration: "1 to 3 days",
+      features: ["Online 100% training"],
+      icon: <Award className="h-5 w-5 text-blue-600" />
     },
     {
-      title: "Bootcamp",
-      subtitle: "Corporate / Startup Impact",  
-      duration: "3 Months", 
-      features: ["Live Projects", "Industry / Other", "Certificate"]
+      title: "Standard",
+      subtitle: "Corporate Training Program",
+      duration: "3 to 10 days",
+      features: ["Online + Offline 100% LIVE training"],
+      icon: <Users className="h-5 w-5 text-blue-600" />
     },
     {
       title: "Advanced",
-      subtitle: "Executive / Selected Research",
-      duration: "2 Months",
-      features: ["Top Placements", "Real-time development", "Advanced"]
+      subtitle: "Instrumentation Hands-on",
+      duration: "3 to 10 days",
+      features: ["Offline 100% LIVE training"],
+      icon: <TestTube className="h-5 w-5 text-blue-600" />
     }
   ];
 
@@ -131,9 +139,9 @@ const Index = () => {
     { question: "Where", answer: "We offer both online and on-campus programs depending on the course." }
   ];
 
-  // Four-corner star SVG component
+  // Four-corner star SVG component (Gemini AI logo style)
   const FourCornerStar = () => (
-    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
       <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
     </svg>
   );
@@ -141,11 +149,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b bg-white px-4 py-4">
+      <header className="border-b bg-white px-4 py-3">
         <div className="container mx-auto flex items-center justify-between max-w-7xl">
           <div className="flex items-center space-x-3">
-            <div className="h-12 w-12 flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="h-10 w-10 flex items-center justify-center">
+              <svg width="40" height="40" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24.4619 41.3662L25.6298 39.0822C26.3827 39.6531 27.4987 40.1592 28.7964 40.1592C29.2507 40.1592 29.5232 40.0555 29.5232 39.8219C29.5232 39.4714 29.0041 39.4455 28.3293 39.3287C26.9277 39.0951 24.8901 38.7317 24.8901 36.5774C24.8901 34.6177 26.5382 33.6963 28.8354 33.6963C30.795 33.6963 31.9631 34.3192 32.4692 34.6567L31.2883 36.876C30.7042 36.5124 29.6271 36.1102 28.6018 36.1102C28.1346 36.1102 27.9139 36.214 27.9139 36.4217C27.9139 36.7072 28.2645 36.7331 28.7964 36.837C30.1461 37.0965 32.586 37.369 32.586 39.6401C32.586 41.496 31.1584 42.6641 28.5239 42.6641C26.9146 42.6641 25.4093 42.1059 24.4619 41.3662Z" fill="#0389FF"/>
                 <path d="M35.4016 36.364H33.0137V33.8332H40.7875V36.364H38.3995V42.5156H35.4016V36.364Z" fill="#0389FF"/>
                 <path d="M44.5121 40.0238H48.3666V42.5156H41.6309V33.8332H48.2238V36.3251H44.5121V37.0388H48.12V39.297H44.5121V40.0238Z" fill="#0389FF"/>
@@ -161,7 +169,7 @@ const Index = () => {
             </div>
           </div>
           
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             <div className="relative group">
               <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
                 Courses/Trainings <ChevronDown className="h-4 w-4 ml-1" />
@@ -180,10 +188,10 @@ const Index = () => {
           </nav>
           
           <div className="flex items-center space-x-3">
-            <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50 rounded-full px-6 text-sm">
+            <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50 rounded-full px-4 text-sm">
               Partner with us
             </Button>
-            <Button className="bg-blue-500 hover:bg-blue-600 rounded-full px-8 text-sm">
+            <Button className="bg-blue-500 hover:bg-blue-600 rounded-full px-6 text-sm">
               LOGIN
             </Button>
           </div>
@@ -191,96 +199,80 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Animated Grid Background */}
+      <section className="py-16 bg-white relative overflow-hidden">
+        {/* Animated Grid Background with fade */}
         <div 
-          className="absolute inset-0 opacity-20 pointer-events-none"
+          className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)
             `,
-            backgroundSize: '40px 40px',
+            backgroundSize: '30px 30px',
             mask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
             WebkitMask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
           }}
         />
 
-        {/* Animated connection lines and dots */}
-        <div className="absolute top-20 left-16 hidden lg:block animate-pulse">
-          <div className="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
-          <div className="w-px h-32 bg-gradient-to-b from-blue-500 to-transparent ml-1.5 mt-2 animate-pulse"></div>
+        {/* Animated connection elements */}
+        <div className="absolute top-16 left-12 hidden lg:block">
+          <div className="w-2 h-2 bg-blue-500 rounded-full animate-ping"></div>
+          <div className="w-px h-24 bg-gradient-to-b from-blue-500 to-transparent ml-1 mt-2 animate-pulse"></div>
+          <div className="w-40 h-px bg-gradient-to-r from-blue-500 to-transparent mt-2 animate-pulse delay-300"></div>
         </div>
         
-        <div className="absolute top-40 left-72 hidden lg:block animate-bounce delay-300">
-          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-          <div className="w-px h-20 bg-gradient-to-b from-blue-500 to-transparent ml-1 mt-2"></div>
-        </div>
-        
-        <div className="absolute top-32 right-20 hidden lg:block animate-pulse delay-500">
-          <div className="w-px h-40 bg-gradient-to-b from-transparent to-blue-500"></div>
-          <div className="w-3 h-3 bg-blue-500 rounded-full -ml-1.5 animate-ping"></div>
-        </div>
-        
-        <div className="absolute bottom-32 right-32 hidden lg:block animate-bounce delay-700">
-          <div className="w-px h-24 bg-gradient-to-b from-transparent to-blue-500"></div>
-          <div className="w-2 h-2 bg-blue-500 rounded-full -ml-0.5"></div>
-        </div>
-
-        {/* Connecting animated lines */}
-        <div className="absolute top-20 left-20 hidden lg:block">
-          <div className="w-52 h-px bg-gradient-to-r from-blue-500 to-transparent animate-pulse delay-200"></div>
-        </div>
-        <div className="absolute top-44 right-24 hidden lg:block">
-          <div className="w-40 h-px bg-gradient-to-l from-blue-500 to-transparent animate-pulse delay-600"></div>
+        <div className="absolute top-32 right-16 hidden lg:block">
+          <div className="w-px h-32 bg-gradient-to-b from-transparent to-blue-500 animate-pulse delay-500"></div>
+          <div className="w-2 h-2 bg-blue-500 rounded-full -ml-1 animate-ping delay-700"></div>
+          <div className="w-32 h-px bg-gradient-to-l from-blue-500 to-transparent -mt-1 animate-pulse delay-900"></div>
         </div>
         
         <div className="container mx-auto text-center px-4 relative max-w-7xl">
-          <p className="text-gray-600 mb-8 text-lg">Empowering Future Innovators through STEM Learning</p>
+          <p className="text-gray-600 mb-6 text-lg">Empowering Future Innovators through STEM Learning</p>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-5xl mx-auto">
             Let's <span className="text-black">Innovate, Incubate and Impact</span> <span className="text-gray-400">the<br />world together!</span>
           </h1>
           
-          <p className="text-gray-600 mb-10 text-lg max-w-xl mx-auto">
+          <p className="text-gray-600 mb-8 text-lg max-w-xl mx-auto">
             Join hands with us to solve <span className="text-yellow-600 font-semibold">Real-world challenges</span>
           </p>
           
-          <Button size="lg" className="mb-20 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-lg">
+          <Button size="lg" className="mb-16 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-lg">
             EXPLORE OUR PROGRAMS
           </Button>
 
           {/* Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {stats.map((stat, index) => {
               const isMiddleCard = index === 1;
               return (
-                <Card key={index} className={`p-8 rounded-2xl border-2 ${isMiddleCard ? 'bg-blue-100 border-blue-200' : 'bg-white border-gray-200'}`}>
+                <Card key={index} className={`p-6 rounded-2xl border-2 ${isMiddleCard ? 'bg-blue-100 border-blue-200' : 'bg-white border-gray-200'}`}>
                   <CardContent className="p-0">
-                    <div className="flex items-center mb-6">
-                      <Badge variant="secondary" className={`rounded-full px-4 py-1 text-sm ${isMiddleCard ? 'bg-blue-200 text-blue-800' : 'bg-gray-100 text-gray-700'}`}>
+                    <div className="flex items-center mb-4">
+                      <Badge variant="secondary" className={`rounded-full px-3 py-1 text-sm ${isMiddleCard ? 'bg-blue-200 text-blue-800' : 'bg-gray-100 text-gray-700'}`}>
                         {stat.subtitle}
                       </Badge>
                     </div>
                     
-                    <h3 className="font-bold text-xl mb-4 text-left text-black">{stat.title}</h3>
-                    <p className="text-sm text-gray-600 mb-6 text-left leading-relaxed">{stat.description}</p>
+                    <h3 className="font-bold text-lg mb-3 text-left text-black">{stat.title}</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left leading-relaxed">{stat.description}</p>
                     
                     {stat.hasAvatars && (
-                      <div className="flex items-center mb-6">
+                      <div className="flex items-center mb-4">
                         <div className="flex -space-x-2">
-                          <div className="w-10 h-10 rounded-full bg-blue-500 border-2 border-white"></div>
-                          <div className="w-10 h-10 rounded-full bg-green-500 border-2 border-white"></div>
-                          <div className="w-10 h-10 rounded-full bg-purple-500 border-2 border-white"></div>
+                          <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white"></div>
+                          <div className="w-8 h-8 rounded-full bg-green-500 border-2 border-white"></div>
+                          <div className="w-8 h-8 rounded-full bg-purple-500 border-2 border-white"></div>
                         </div>
                       </div>
                     )}
                     
-                    <div className="grid grid-cols-2 gap-6 text-left">
+                    <div className="grid grid-cols-2 gap-4 text-left">
                       {stat.stats.map((item, idx) => (
                         <div key={idx}>
-                          <div className="text-3xl font-bold text-gray-800 mb-1">{item.value}</div>
-                          <div className="text-sm text-gray-500">{item.label}</div>
+                          <div className="text-2xl font-bold text-gray-800 mb-1">{item.value}</div>
+                          <div className="text-xs text-gray-500">{item.label}</div>
                         </div>
                       ))}
                     </div>
@@ -293,114 +285,114 @@ const Index = () => {
       </section>
 
       {/* Sectors Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-gray-500 text-center md:text-left">Sectors we Focus</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-500 text-center md:text-left">Sectors we Focus</h2>
           <div className="max-w-6xl mx-auto">
             {/* Row 1 - 3 items */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Climate Change</span>
+                <span className="text-gray-800 font-medium text-base">Climate Change</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Technology</span>
+                <span className="text-gray-800 font-medium text-base">Technology</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Life science</span>
+                <span className="text-gray-800 font-medium text-base">Life science</span>
               </div>
             </div>
             
             {/* Row 2 - 4 items */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Innovation</span>
+                <span className="text-gray-800 font-medium text-base">Innovation</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Finance</span>
+                <span className="text-gray-800 font-medium text-base">Finance</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Pharmacy</span>
+                <span className="text-gray-800 font-medium text-base">Pharmacy</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Agriculture</span>
+                <span className="text-gray-800 font-medium text-base">Agriculture</span>
               </div>
             </div>
             
             {/* Row 3 - 3 items */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Entrepreneurship</span>
+                <span className="text-gray-800 font-medium text-base">Entrepreneurship</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Veterinary</span>
+                <span className="text-gray-800 font-medium text-base">Veterinary</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Medicine</span>
+                <span className="text-gray-800 font-medium text-base">Medicine</span>
               </div>
             </div>
             
             {/* Row 4 - 2 items centered */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Allied health science</span>
+                <span className="text-gray-800 font-medium text-base">Allied health science</span>
               </div>
-              <div className="bg-blue-200 rounded-2xl p-6 flex items-center space-x-4">
-                <div className="w-6 h-6 text-blue-800 flex-shrink-0">
+              <div className="bg-blue-200 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-5 h-5 text-blue-800 flex-shrink-0">
                   <FourCornerStar />
                 </div>
-                <span className="text-gray-800 font-medium text-lg">Environmental Science</span>
+                <span className="text-gray-800 font-medium text-base">Environmental Science</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Section */}
-      <section className="py-20 bg-white border-4 border-blue-500 mx-4 my-8 rounded-none">
-        <div className="container mx-auto px-8 max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      {/* Why Choose Section with rounded corners */}
+      <section className="py-12 bg-white border-4 border-blue-500 mx-4 my-6 rounded-2xl">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-gray-600 mb-4 bg-gray-100 inline-block px-4 py-2 rounded-full">World-Class Instructors</p>
-              <h2 className="text-4xl font-bold mb-8">
+              <p className="text-gray-600 mb-3 bg-gray-100 inline-block px-3 py-2 rounded-full text-sm">World-Class Instructors</p>
+              <h2 className="text-3xl font-bold mb-6">
                 Why Choose <br/><span className="text-blue-600">Stem for Society</span> ?
               </h2>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {whyChooseItems.map((item, index) => (
-                <div key={index} className="bg-gray-100 rounded-lg p-4 text-lg font-medium">
+                <div key={index} className="bg-gray-100 rounded-lg p-3 text-base font-medium">
                   {item}
                 </div>
               ))}
@@ -410,12 +402,12 @@ const Index = () => {
       </section>
 
       {/* Partners Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4 text-center max-w-7xl">
-          <h2 className="text-2xl font-bold mb-8">Industrial & Academic Partners</h2>
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <h2 className="text-xl font-bold mb-6">Industrial & Academic Partners</h2>
+          <div className="flex flex-wrap justify-center items-center gap-6">
             {partners.map((partner, index) => (
-              <div key={index} className="text-lg font-semibold text-gray-600">
+              <div key={index} className="text-base font-semibold text-gray-600">
                 {partner}
               </div>
             ))}
@@ -424,30 +416,49 @@ const Index = () => {
       </section>
 
       {/* Program Structure */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Program Structure</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-2xl font-bold text-center mb-8">Program Structure</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {programStructure.map((program, index) => (
-              <Card key={index} className="p-6">
+              <Card key={index} className="p-4 bg-white border border-gray-200 rounded-lg">
                 <CardContent className="p-0">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-3">
                     <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                      <BookOpen className="h-4 w-4 text-blue-600" />
+                      {program.icon}
                     </div>
-                    <div>
-                      <h3 className="font-bold">{program.title}</h3>
-                      <p className="text-sm text-gray-600">{program.subtitle}</p>
-                    </div>
+                    <Badge 
+                      variant="secondary" 
+                      className={`rounded-full px-3 py-1 text-xs ${
+                        index === 0 ? 'bg-gray-100 text-gray-700' :
+                        index === 1 ? 'bg-blue-100 text-blue-700' :
+                        index === 2 ? 'bg-gray-100 text-gray-700' :
+                        'bg-gray-100 text-gray-700'
+                      }`}
+                    >
+                      {program.title}
+                    </Badge>
                   </div>
-                  <div className="mb-4">
-                    <Badge variant="secondary">{program.duration}</Badge>
+                  
+                  <h3 className="font-semibold text-sm mb-2">{program.subtitle}</h3>
+                  
+                  <div className="flex items-center gap-2 mb-3 text-xs text-gray-600">
+                    <Calendar className="h-3 w-3" />
+                    <span>{program.duration}</span>
                   </div>
-                  <ul className="space-y-1">
-                    {program.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm text-gray-600">• {feature}</li>
-                    ))}
-                  </ul>
+                  
+                  <div className="flex items-center gap-2 mb-3 text-xs text-gray-600">
+                    <Monitor className="h-3 w-3" />
+                    <span>{program.features[0]}</span>
+                  </div>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full text-xs py-2 h-8"
+                  >
+                    More info
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -456,21 +467,21 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-12 bg-blue-50">
         <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Testimonials</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-8">Testimonials</h2>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6">
+              <Card key={index} className="p-4">
                 <CardContent className="p-0">
-                  <div className="flex mb-4">
+                  <div className="flex mb-3">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <h4 className="font-bold mb-2">{testimonial.title}</h4>
-                  <p className="text-sm text-gray-600 mb-4">{testimonial.text}</p>
-                  <p className="font-semibold">- {testimonial.name}</p>
+                  <h4 className="font-semibold mb-2 text-sm">{testimonial.title}</h4>
+                  <p className="text-xs text-gray-600 mb-3">{testimonial.text}</p>
+                  <p className="font-medium text-sm">- {testimonial.name}</p>
                 </CardContent>
               </Card>
             ))}
@@ -479,11 +490,11 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+          <div className="max-w-2xl mx-auto">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
               <Button variant="outline" size="sm">
                 General Information <ChevronDown className="h-4 w-4 ml-2" />
               </Button>
@@ -491,10 +502,10 @@ const Index = () => {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
+                  <AccordionTrigger className="text-left text-sm">
                     Q{index + 1}. {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent>
+                  <AccordionContent className="text-sm">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -504,15 +515,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* New Footer matching the image */}
-      <footer className="bg-blue-600 text-white py-16">
+      {/* Footer with color #00549F */}
+      <footer style={{ backgroundColor: '#00549F' }} className="text-white py-10">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
             {/* Logo and Description */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="h-12 w-12 rounded-lg bg-white/10 flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="h-10 w-10 rounded-lg bg-white/10 flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24.4619 41.3662L25.6298 39.0822C26.3827 39.6531 27.4987 40.1592 28.7964 40.1592C29.2507 40.1592 29.5232 40.0555 29.5232 39.8219C29.5232 39.4714 29.0041 39.4455 28.3293 39.3287C26.9277 39.0951 24.8901 38.7317 24.8901 36.5774C24.8901 34.6177 26.5382 33.6963 28.8354 33.6963C30.795 33.6963 31.9631 34.3192 32.4692 34.6567L31.2883 36.876C30.7042 36.5124 29.6271 36.1102 28.6018 36.1102C28.1346 36.1102 27.9139 36.214 27.9139 36.4217C27.9139 36.7072 28.2645 36.7331 28.7964 36.837C30.1461 37.0965 32.586 37.369 32.586 39.6401C32.586 41.496 31.1584 42.6641 28.5239 42.6641C26.9146 42.6641 25.4093 42.1059 24.4619 41.3662Z" fill="white"/>
                     <path d="M35.4016 36.364H33.0137V33.8332H40.7875V36.364H38.3995V42.5156H35.4016V36.364Z" fill="white"/>
                     <path d="M44.5121 40.0238H48.3666V42.5156H41.6309V33.8332H48.2238V36.3251H44.5121V37.0388H48.12V39.297H44.5121V40.0238Z" fill="white"/>
@@ -520,13 +531,13 @@ const Index = () => {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xl font-bold">STEM FOR SOCIETY</div>
+                  <div className="text-lg font-bold">STEM FOR SOCIETY</div>
                 </div>
               </div>
-              <p className="text-blue-100 mb-6 leading-relaxed">
+              <p className="text-blue-100 mb-4 text-sm leading-relaxed">
                 Let's Innovate, Incubate and Impact the world together!
               </p>
-              <div className="space-y-2 text-blue-100">
+              <div className="space-y-1 text-blue-100 text-sm">
                 <p>217 Broadway, Floor 9, New York, NY 10007</p>
                 <p>844-402-4344</p>
                 <p>support@tomorrowhealth.com</p>
@@ -535,8 +546,8 @@ const Index = () => {
 
             {/* Programs */}
             <div>
-              <h4 className="font-semibold mb-4 text-blue-100">PROGRAMS</h4>
-              <ul className="space-y-3 text-white">
+              <h4 className="font-semibold mb-3 text-blue-100 text-sm">PROGRAMS</h4>
+              <ul className="space-y-2 text-white text-sm">
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Explore Courses</a></li>
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Psychology counselling</a></li>
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Career counselling</a></li>
@@ -545,8 +556,8 @@ const Index = () => {
 
             {/* For Institutions */}
             <div>
-              <h4 className="font-semibold mb-4 text-blue-100">FOR INSTITUTIONS</h4>
-              <ul className="space-y-3 text-white">
+              <h4 className="font-semibold mb-3 text-blue-100 text-sm">FOR INSTITUTIONS</h4>
+              <ul className="space-y-2 text-white text-sm">
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Plans and pricings</a></li>
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Campus Ambassador Program</a></li>
               </ul>
@@ -554,15 +565,15 @@ const Index = () => {
 
             {/* Community & Quick Links */}
             <div>
-              <h4 className="font-semibold mb-4 text-blue-100">COMMUNITY</h4>
-              <ul className="space-y-3 text-white mb-6">
+              <h4 className="font-semibold mb-3 text-blue-100 text-sm">COMMUNITY</h4>
+              <ul className="space-y-2 text-white text-sm mb-4">
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Join Community</a></li>
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Scientific Communication Blog</a></li>
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Our Youtube Channel</a></li>
               </ul>
               
-              <h4 className="font-semibold mb-4 text-blue-100">QUICK LINKS</h4>
-              <ul className="space-y-3 text-white">
+              <h4 className="font-semibold mb-3 text-blue-100 text-sm">QUICK LINKS</h4>
+              <ul className="space-y-2 text-white text-sm">
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Register</a></li>
                 <li><a href="#" className="hover:text-blue-200 transition-colors">Login</a></li>
               </ul>
@@ -570,21 +581,21 @@ const Index = () => {
           </div>
 
           {/* Newsletter Subscription */}
-          <div className="border-t border-blue-500 pt-8 mb-8">
+          <div className="border-t border-blue-400 pt-6 mb-6">
             <div className="max-w-md">
-              <h4 className="font-semibold mb-4 text-blue-100">SUBSCRIBE FOR THE LATEST UPDATES</h4>
-              <div className="space-y-4">
+              <h4 className="font-semibold mb-3 text-blue-100 text-sm">SUBSCRIBE FOR THE LATEST UPDATES</h4>
+              <div className="space-y-3">
                 <input
                   type="text"
                   placeholder="First name"
-                  className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  className="w-full px-3 py-2 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm"
                 />
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  className="w-full px-3 py-2 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm"
                 />
-                <Button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium">
+                <Button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-lg font-medium text-sm">
                   Subscribe
                 </Button>
               </div>
@@ -592,22 +603,22 @@ const Index = () => {
           </div>
 
           {/* Social Media and Copyright */}
-          <div className="flex flex-col md:flex-row justify-between items-center border-t border-blue-500 pt-8">
-            <div className="flex space-x-4 mb-4 md:mb-0">
-              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-                <Twitter className="h-5 w-5 text-blue-600" />
+          <div className="flex flex-col md:flex-row justify-between items-center border-t border-blue-400 pt-6">
+            <div className="flex space-x-3 mb-4 md:mb-0">
+              <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Twitter className="h-4 w-4 text-blue-600" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-                <Instagram className="h-5 w-5 text-blue-600" />
+              <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Instagram className="h-4 w-4 text-blue-600" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-                <Linkedin className="h-5 w-5 text-blue-600" />
+              <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Linkedin className="h-4 w-4 text-blue-600" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-                <Youtube className="h-5 w-5 text-blue-600" />
+              <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                <Youtube className="h-4 w-4 text-blue-600" />
               </a>
             </div>
-            <p className="text-blue-200 text-sm">
+            <p className="text-blue-200 text-xs">
               © 2025 STEM for society. All rights reserved.
             </p>
           </div>
